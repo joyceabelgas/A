@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
