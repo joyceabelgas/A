@@ -1,0 +1,85 @@
+ion-header{
+    
+    ion-item{
+        padding: 30px 10px;
+        --background: #efe4f2;
+        background: #efe4f2; 
+
+        h3{
+            font-family:"poppins";
+            font-size: 12px;
+            max-width: 125px;
+            margin-left: 4.5px;
+            line-height: 1;
+            color:black
+        }
+
+        h2{
+            font-family:"poppins";
+            font-size: 14px;
+            font-weight: 10px;
+            max-width: 125px;
+            margin-left: 4.5px;
+            line-height: 1;
+            padding: 2px 0;
+            margin-top: 10px;
+            color: black;
+
+        }
+
+        p{
+            font-family:"poppins";
+            font-size: 10px;
+            max-width: 126px;
+            margin-left: 4.5px;
+            line-height: 1;
+            padding: 2px 0;
+            margin-top: 10px;
+            color: black;
+
+            
+        }
+    }
+
+    ion-avatar{
+        width: 135px;
+        height: auto;
+    }
+}
+
+ion-card{
+    --background: #9b29b2;
+    background: #9b29b2;
+    border-radius: 25px;
+    max-width: 320px;
+    align-content: center;
+    height: auto;
+    padding: 30px 10px;
+    margin: 20px auto; 
+    top: -15%;
+}
+ion-content{
+    margin-top: 10px;
+    --background: #9b29b2;
+    background: #9b29b2;
+
+ion-item{
+    --background: #9b29b2;
+    background: #9b29b2;
+    --ion-item-border-color: #9b29b2;
+    border-color: #9b29b2;
+
+    ion-label{
+        font-family: "poppins";
+        font-size: 12px;
+        color: #efe4f2;
+        font-weight: 10px;
+
+        p{
+            line-height: 1;
+            color: burlywood;
+
+        }
+    }
+}
+}
