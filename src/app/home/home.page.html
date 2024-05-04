@@ -1,20 +1,27 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+<div class="container">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <h1>Songs</h1> 
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="content" *ngFor="let user of UserList">
+    
+  <div class="content-box">
+    <h5> Title :  {{ user.title}}</h5>
+    <h5> Singer :  {{ user.singer}}</h5>
+    <h5> Rating :  {{ user.rating}}</h5>
+    <h5> Record :  {{ user.record}}</h5>
   </div>
+
+  <div class="btn">
+    <div class="button-wrapper">
+      <ion-button color="primary" (click)="update(user)">update</ion-button>
+    </div>
+    <div class="button-wrapper">
+      <ion-button color="danger" (click)="delete(user)">delete</ion-button>
+    </div>
+  </div>
+
+ </div>
+    <ion-button (click)="create()" color="success">create</ion-button>
+</div>
 </ion-content>

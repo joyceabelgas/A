@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { User, iUser } from './home.model';
+import { Router } from '@angular/router';
+import { HomeService } from './home.service';
+
 
 @Component({
   selector: 'app-home',
@@ -6,7 +10,36 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+    
+  UserList: iUser[] = [];
+  Users: User = new User();
+  constructor(private router: Router, private home: HomeService) {}
+  
+  update(user: User){
+    this.router.navigate(['update']);
+    this.home.newList = this.UserList;
+    this.home.edit(user);
+  }
+  async delete(user: User){
+   const confirmation = confirm('Do you really want to delete this song?');
+   if(!confirmation){
+    return;
 
-  constructor() {}
+   }
+   await this.home.tryDelete(user);
+    this.home.presentAlert('Success', 'Song successfully Deleted');
+    this.user();
+    this.Users = new User();
+  }
+  create(){
+    this.router.navigate(['create']);
+  }
 
+  async user(){
+    this.UserList = await this.home.getUsers();
+  }
+
+  ionViewWillEnter(){
+    this.user();
+  }
 }
